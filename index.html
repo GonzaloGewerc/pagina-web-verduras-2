@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Página Web – Bolsones</title>
+  <link rel="stylesheet" href="verduras2.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="brand">Bolsones de Fruta y Verdura</h1>
+      <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#pedido">Hace tu pedido</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ========================== INICIO (MODIFICADO) ========================== -->
+  <main>
+    <section id="inicio" class="seccion seccion-inicio">
+      <div class="container">
+        <h2 class="titulo-seccion">Nuestros productos</h2>
+
+        <div class="productos-grid" id="productosGrid">
+          <article class="card-producto card-producto-verduras" data-id="bolson-verduras-1">
+            <div class="card-producto__contenido">
+              <h3 class="card-producto__titulo">Bolson de Verduras</h3>
+              <p class="card-producto__desc">Zanahoria, cebolla de verdeo, puerro, acelga, pimientos, batata.</p>
+              <div class="btn-agregar-wrap">
+                <button type="button" class="btn-agregar">AGREGAR</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-producto card-producto-papacebolla" data-id="bolson-papa-cebolla">
+            <div class="card-producto__contenido">
+              <h3 class="card-producto__titulo">Papa y Cebolla</h3>
+              <p class="card-producto__desc">Bolson con papas y cebollas comunes.</p>
+              <div class="btn-agregar-wrap">
+                <button type="button" class="btn-agregar">AGREGAR</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-producto card-producto-frutas" data-id="bolson-frutas">
+            <div class="card-producto__contenido">
+              <h3 class="card-producto__titulo">Bolson de Frutas</h3>
+              <p class="card-producto__desc">Banana, manzana, mandarina, naranja, frutillas y uvas.</p>
+              <div class="btn-agregar-wrap">
+                <button type="button" class="btn-agregar">AGREGAR</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-producto card-producto-huevos" data-id="maple-huevos">
+            <div class="card-producto__contenido">
+              <h3 class="card-producto__titulo">Maple de 30 huevos</h3>
+              <p class="card-producto__desc">Maple de cartón de 30 unidades.</p>
+              <div class="btn-agregar-wrap">
+                <button type="button" class="btn-agregar">AGREGAR</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== HACE TU PEDIDO ========================== -->
+    <section id="pedido" class="seccion seccion-pedido">
+      <div class="container">
+        <h2 class="titulo-seccion">Hace tu pedido</h2>
+
+        <div class="pedido__layout">
+          <div class="pedido__resumen">
+            <h3>Resumen del pedido</h3>
+            <ul id="resumenLista" class="resumen-lista"></ul>
+          </div>
+
+          <form class="pedido__form" id="formPedido">
+            <div class="campo">
+              <label for="nombre">Nombre y apellido</label>
+              <input id="nombre" name="nombre" type="text" required />
+            </div>
+            <div class="campo">
+              <label for="telefono">Teléfono</label>
+              <input id="telefono" name="telefono" type="tel" required />
+            </div>
+
+            <!-- DIRECCIÓN + UBICACIÓN ACTUAL -->
+            <div class="campo campo-ubic">
+              <label for="direccion">Dirección</label>
+              <div class="ubic-row">
+                <input id="direccion" name="direccion" type="text" placeholder="Escribí tu dirección o usa tu ubicación actual" />
+                <button type="button" class="btn-secundario" id="btnUbicacionActual">Ubicación actual</button>
+              </div>
+              <div class="ubic-info" id="ubicInfo" hidden>
+                <a id="mapsPreview" href="#" target="_blank" rel="noopener">Ver en Google Maps</a>
+                <small id="ubicStatus" class="ubic-status"></small>
+              </div>
+
+              <!-- Hidden para que el link y coords viajen en el envío del formulario -->
+              <input type="hidden" id="lat" name="lat" />
+              <input type="hidden" id="lng" name="lng" />
+              <input type="hidden" id="maps_url" name="maps_url" />
+            </div>
+
+            <div class="campo">
+              <label for="pago">Medio de pago</label>
+              <select id="pago" name="pago">
+                <option>Efectivo</option>
+                <option>Transferencia</option>
+                <option>Tarjeta</option>
+              </select>
+            </div>
+            <button type="submit" class="btn-primario">Confirmar pedido</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Página creada por Gonzalo Gewerc • Instagram: @tu_instagram • Tel: +54 9 351 …</p>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="verduras2.js"></script>
+</body>
+</html>
